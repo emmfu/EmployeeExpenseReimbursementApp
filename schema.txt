@@ -1,3 +1,4 @@
+NEED TO ADD CONSTRAINTS 
 - Employees
  * 			+ Employee_id (PK)
  * 			+ first_name
@@ -19,7 +20,7 @@
  * 			+ REIMB_AMOUNT
  * 			+ REIMB_SUBMITTED
  * 			+ REIMB_RESOLVED
- * 			+ REIMB_STATUS_ID
+ * 			+ REIMB_DESCRIPTION
 
  - ERS_USERS
  * 			+ ERS_USER_id (PK)

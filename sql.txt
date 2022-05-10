@@ -1,0 +1,27 @@
+create table Employees (
+	id serial constraint Employee_pk primary key,
+	first_name varchar(25) not null,
+	last_name varchar(25) not null,
+	user_name varchar(25) not null,
+	pass_word varchar(25) not null
+	
+);
+
+create table ERS_REIMBURSEMENT (
+	id serial constraint  REIMB_ID primary key,
+	REIMB_AMOUNT varchar(25) not null,
+	REIMB_SUBMITTED date not null,
+	REIMB_RESOLVED date not null,
+	REIMB_DESCRIPTION varchar(25) not null
+	
+	
+);
+
+create table Manager (
+	id serial constraint  Manager_pk primary key,
+	first_name varchar(25) not null,
+	last_name varchar(25) not null,
+	user_name varchar(25) not null,
+	pass_word varchar(25) not null
+	
+);
