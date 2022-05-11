@@ -1,19 +1,5 @@
 NEED TO ADD CONSTRAINTS 
-- Employees
- * 			+ Employee_id (PK)
- * 			+ first_name
- * 			+ last_name
- * 			+ user_name
- * 			+ pass_word
- * 			
 
- - Manager
- * 			+ Manager_id (PK)
- * 			+ first_name
- * 			+ last_name
- * 			+ user_name
- * 			+ pass_word
- * 			
 
  - ERS_REIMBURSEMENT
  * 			+ REIMB_ID (PK)
@@ -24,12 +10,12 @@ NEED TO ADD CONSTRAINTS
 
  - ERS_USERS
  * 			+ ERS_USER_id (PK)
-* 			+ ERS_USERNAME
- * 			+ ERS_PASSWORD
- * 			+ USER_FIRST_NAME
- * 			+ USER_LAST_NAME
- * 			+ USER_EMAIL
- * 			+ USER_ROLE_ID
+* 			+ ERS_USERS_USERNAME
+ * 			+ ERS_USERS_PASSWORD
+ * 			+ ERS_USERS_FIRST_NAME
+ * 			+ ERS_USERS_LAST_NAME
+ * 			+ ERS_USERS_EMAIL
+ * 			+ ERS_USERS_ROLE_ID
 
  - ERS_REIMBURSEMENT_STATUS
  * 			+ REIMB_STATUS_ID (PK)

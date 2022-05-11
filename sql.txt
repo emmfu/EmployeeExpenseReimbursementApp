@@ -1,11 +1,4 @@
-create table Employees (
-	id serial constraint Employee_pk primary key,
-	first_name varchar(25) not null,
-	last_name varchar(25) not null,
-	user_name varchar(25) not null,
-	pass_word varchar(25) not null
-	
-);
+-- STILL NEED TO ADD CONSTRAINTS 
 
 create table ERS_REIMBURSEMENT (
 	id serial constraint  REIMB_ID primary key,
@@ -14,14 +7,39 @@ create table ERS_REIMBURSEMENT (
 	REIMB_RESOLVED date not null,
 	REIMB_DESCRIPTION varchar(25) not null
 	
+);
+
+
+
+create table ERS_USERS (
+	id serial constraint  ERS_USERS_ID primary key,
+	ERS_USERNAME varchar(25) not null,
+	ERS_PASSWORDE varchar(25) not null,
+	ERS_FIRST_NAME varchar(25) not null,
+	ERS_LAST_NAME varchar(25) not null,
+	REIMB_SUBMITTED date not null,
+	REIMB_RESOLVED date not null,
+	REIMB_DESCRIPTION varchar(25) not null
+	
 	
 );
 
-create table Manager (
-	id serial constraint  Manager_pk primary key,
-	first_name varchar(25) not null,
-	last_name varchar(25) not null,
-	user_name varchar(25) not null,
-	pass_word varchar(25) not null
+create table ERS_REIMBURSEMENT_STATUS (
+	id serial constraint  REIMBURSEMENT_STATUS_ID primary key,
+	REIMBURSEMENT_STATUS varchar(25) not null
+	
+	
+);
+
+create table ERS_REIMBURSEMENT_TYPE (
+	id serial constraint  REIMBURSEMENT_TYPE_ID primary key,
+	REIMBURSEMENT_TYPE varchar(25) not null
+	
+	
+);
+create table ERS_USER_ROLES (
+	id serial constraint  ERS_USER_ROLES_ID primary key,
+	USER_ROLE varchar(25) not null
+	
 	
 );
