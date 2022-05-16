@@ -8,7 +8,7 @@
   
         <!-- Connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/store-ak</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://database-p0.c3hbis92pit4.us-east-2.rds.amazonaws.com:5432/databasep0</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
   
