@@ -1,28 +1,5 @@
 -- STILL NEED TO ADD CONSTRAINTS 
 
-create table ERS_REIMBURSEMENT (
-	id serial constraint  REIMB_ID primary key,
-	REIMB_AMOUNT varchar(25) not null,
-	REIMB_SUBMITTED date not null,
-	REIMB_RESOLVED date not null,
-	REIMB_DESCRIPTION varchar(25) not null
-	
-);
-
-
-
-create table ERS_USERS (
-	id serial constraint  ERS_USERS_ID primary key,
-	ERS_USERNAME varchar(25) not null,
-	ERS_PASSWORDE varchar(25) not null,
-	ERS_FIRST_NAME varchar(25) not null,
-	ERS_LAST_NAME varchar(25) not null,
-	REIMB_SUBMITTED date not null,
-	REIMB_RESOLVED date not null,
-	REIMB_DESCRIPTION varchar(25) not null
-	
-	
-);
 
 create table ERS_REIMBURSEMENT_STATUS (
 	id serial constraint  REIMBURSEMENT_STATUS_ID primary key,
@@ -43,3 +20,58 @@ create table ERS_USER_ROLES (
 	
 	
 );
+
+
+
+
+create table ERS_USERS (
+	id serial constraint  ERS_USERS_ID primary key,
+	USER_USERNAME varchar(25) not null,
+	USER_PASSWORDE varchar(25) not null,
+	USER_FIRST_NAME varchar(25) not null,
+	USER_LAST_NAME varchar(25) not null,
+	USER_ROLE_ID int not null
+	
+	
+	
+);
+
+create table ERS_REIMBURSEMENT (
+	id serial constraint  REIMB_ID primary key,
+	REIMB_AMOUNT varchar(25) not null,
+	REIMB_SUBMITTED date not null,
+	REIMB_RESOLVED date not null,
+	REIMB_DESCRIPTION varchar(25) not null,
+	REIMB_AUTHOR int,
+	REIMB_RESOLVER int,
+	REIMB_STATUS_ID int,
+	REIMB_TYPE_ID int
+
+	
+);
+
+ALTER TABLE ERS_REIMBURSEMENT
+ADD CONSTRAINT ERS_USERS_FK_AUTH
+FOREIGN KEY (REIMB_AUTHOR)
+REFERENCES ERS_USERS
+
+ALTER TABLE ERS_REIMBURSEMENT
+ADD CONSTRAINT ERS_USERS_FK_RESLVR
+FOREIGN KEY (REIMB_RESOLVER)
+REFERENCES ERS_USERS
+
+ALTER TABLE ERS_REIMBURSEMENT
+ADD CONSTRAINT  ERS_REIMBURSEMENT_STATUS_FK
+FOREIGN KEY (REIMB_STATUS_ID)
+REFERENCES ERS_REIMBURSEMENT_STATUS
+
+ALTER TABLE ERS_REIMBURSEMENT
+ADD CONSTRAINT  ERS_REIMBURSEMENT_TYPE_FK
+FOREIGN KEY (REIMB_TYPE_ID)
+REFERENCES ERS_REIMBURSEMENT_TYPE
+
+
+ALTER TABLE ERS_USERS
+ADD CONSTRAINT  USER_ROLES_FK
+FOREIGN KEY (USER_ROLE_ID)
+REFERENCES ERS_USER_ROLES
