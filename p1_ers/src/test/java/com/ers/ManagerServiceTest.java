@@ -1,6 +1,8 @@
 package com.ers;
+
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -29,6 +31,10 @@ public class ManagerServiceTest extends TestCase {
 		//Dummy DB =(id, username, password, firstname, lastname, email)
 		man1 = new Manager(1, "WSmith", "Password", "Will", "Smith,", "WSmith@gmail.com" );
 		man2 = new Manager(2, "CRock", "password", "Chris", "Rock,", "CRock@gmail.com" );
+		
+		dummyManagerDb =  new ArrayList<Manager>();
+		dummyManagerDb.add(man1);
+		dummyManagerDb.add(man2);
 	}
 	
 	//happy path scenario
@@ -45,7 +51,7 @@ public class ManagerServiceTest extends TestCase {
 	public void testLoginFail_returnNull() throws Exception{
 		when(mockdao.selectAll()).thenReturn(dummyManagerDb);
 		
-		assertEquals(man2, manv.login("Ramen", "Sushi"));
+		assertEquals(man1, manv.login("", ""));
 	}
 	
 	@Test

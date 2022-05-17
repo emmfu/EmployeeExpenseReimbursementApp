@@ -2,6 +2,7 @@ package com.ers;
 
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -32,6 +33,10 @@ public class EmpServiceTest extends TestCase {
 		//Dummy DB =(id, username, password, firstname, lastname, email)
 		empl1 = new Employee(1, "WSmith", "Password", "Will", "Smith,", "WSmith@gmail.com" );
 		empl2 = new Employee(2, "CRock", "password", "Chris", "Rock,", "CRock@gmail.com" );
+		
+		dummyEmpDb =  new ArrayList<Employee>();
+		dummyEmpDb.add(empl1);
+		dummyEmpDb.add(empl2);
 	}
 	
 	//happy path scenario
