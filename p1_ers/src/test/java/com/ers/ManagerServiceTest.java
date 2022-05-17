@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.ers.dao.ManagerDAOImpl;
+import com.ers.models.Employee;
 import com.ers.models.Manager;
 import com.ers.services.ManagerServiceImpl;
 import junit.framework.TestCase;
@@ -69,6 +70,15 @@ public class ManagerServiceTest extends TestCase {
 		when(mockdao.insert(man3)).thenReturn(1);
 		
 		//act, assert
+		assertEquals(1, manv.register(man3));
+	}
+	
+	@Test
+	public void testRegisterNullManager() {
+		Manager man3 = new Manager(3, "", "", "", "", "");
+		
+		when(mockdao.insert(man3)).thenReturn(1);
+		
 		assertEquals(1, manv.register(man3));
 	}
 }

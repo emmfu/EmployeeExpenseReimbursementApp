@@ -71,5 +71,14 @@ public class EmpServiceTest extends TestCase {
 		when(mockdao.insert(empl3)).thenReturn(1);
 		
 		assertEquals(1, emplv.register(empl3));
+		
+	}
+	@Test
+	public void testRegisterNullEmployee() {
+		Employee empl3 = new Employee(3, "", "", "", "", "");
+		
+		when(mockdao.insert(empl3)).thenReturn(1);
+		
+		assertEquals(1, emplv.register(empl3));
 	}
 }
