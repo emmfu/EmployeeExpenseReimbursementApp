@@ -37,12 +37,12 @@ public class Request {
 	@Column(name="category", unique=true, nullable=false)
 	private String category;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "employee_id")
+	@OneToOne(targetEntity = Employee.class)
+	@JoinColumn(name = "employee_id", referencedColumnName = "employee_id")
 	private int employeeId;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "manager_id")
+	@OneToOne(targetEntity = Manager.class)
+	@JoinColumn(name = "manager_id", referencedColumnName = "manager_id" )
 	private int managerId;
 	// private picture;
 
