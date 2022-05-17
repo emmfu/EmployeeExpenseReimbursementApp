@@ -15,7 +15,7 @@ public class FrontController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		final String URI = req.getRequestURI().replace("/HelloFrontController/", "");
+		final String URI = req.getRequestURI().replace("/p1_ers/", "");
 		
 		switch(URI) {
 		case "employees/login":
@@ -45,7 +45,7 @@ public class FrontController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		final String URI = req.getRequestURI().replace("/HelloFrontcontroller/", "");
+		final String URI = req.getRequestURI().replace("/p1_ers/", "");
 		log.info("Employee URI is: " + URI);
 		
 		switch(URI) {
@@ -93,7 +93,7 @@ public class FrontController extends HttpServlet{
 	
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		final String URI = req.getRequestURI().replace("/helloFrontController/", "");
+		final String URI = req.getRequestURI().replace("/p1_ers/", "");
 		
 		switch(URI) {
 		case "employees/employee/update":

@@ -6,7 +6,7 @@
 
 <servlet>
 	<servlet-name>FrontController</servlet-name>
-	<servlet-class>com.revature.web.FrontController</servlet-class>
+	<servlet-class>com.ers.web.FrontController</servlet-class>
 </servlet>
 
 <servlet-mapping>
