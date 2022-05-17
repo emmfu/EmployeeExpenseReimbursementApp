@@ -36,6 +36,7 @@ public class FrontController extends HttpServlet{
 		case "managers/register":
 			log.info("Registering new manager...");
 			RequestHelper.processManagerRegistration(req, res);
+			break;
 		default:
 			log.info("Showing error message...");
 			RequestHelper.processError(req, res);

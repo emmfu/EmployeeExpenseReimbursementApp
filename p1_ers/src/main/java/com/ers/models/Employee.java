@@ -21,9 +21,9 @@ import lombok.ToString;
 public class Employee {
 
 	@Id
-	@Column(name="employee_id")
+	@Column(name="employeeid")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int employeeId;
+	private int employeeid;
 	
 	@Column(name="user_name", unique=true, nullable=false)
 	private String userName;
@@ -55,7 +55,7 @@ public class Employee {
 
 	public Employee(int employeeId, String userName, String password, String firstName, String lastName, String email) {
 		super();
-		this.employeeId = employeeId;
+		this.employeeid = employeeId;
 		this.userName = userName;
 		this.password = password;
 		this.firstName = firstName;
@@ -65,16 +65,16 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", userName=" + userName + ", password=" + password
+		return "Employee [employeeId=" + employeeid + ", userName=" + userName + ", password=" + password
 				+ ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 
 	public int getEmployeeId() {
-		return employeeId;
+		return employeeid;
 	}
 
 	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+		this.employeeid = employeeId;
 	}
 
 	public String getUserName() {
@@ -119,7 +119,7 @@ public class Employee {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, employeeId, firstName, lastName, password, userName);
+		return Objects.hash(email, employeeid, firstName, lastName, password, userName);
 	}
 
 	@Override
@@ -131,7 +131,7 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		return Objects.equals(email, other.email) && employeeId == other.employeeId
+		return Objects.equals(email, other.email) && employeeid == other.employeeid
 				&& Objects.equals(firstName, other.firstName) && Objects.equals(lastName, other.lastName)
 				&& Objects.equals(password, other.password) && Objects.equals(userName, other.userName);
 	}

@@ -38,11 +38,11 @@ public class Request {
 	private String category;
 	
 	@OneToOne(targetEntity = Employee.class)
-	@JoinColumn(name = "employee_id", referencedColumnName = "employee_id")
+	@JoinColumn(name = "employeeid", referencedColumnName = "employeeid")
 	private int employeeId;
 	
 	@OneToOne(targetEntity = Manager.class)
-	@JoinColumn(name = "manager_id", referencedColumnName = "manager_id" )
+	@JoinColumn(name = "managerid", referencedColumnName = "managerid")
 	private int managerId;
 	// private picture;
 

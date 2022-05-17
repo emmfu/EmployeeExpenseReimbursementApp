@@ -23,9 +23,9 @@ public class Manager {
 
 
 	@Id
-	@Column(name="manager_id")
+	@Column(name="managerid")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int managerId;
+	private int managerid;
 	
 	@Column(name="user_name", unique=true, nullable=false)
 	private String userName;
@@ -58,7 +58,7 @@ public class Manager {
 
 	public Manager(int managerId, String userName, String password, String firstName, String lastName, String email) {
 		super();
-		this.managerId = managerId;
+		this.managerid = managerId;
 		this.userName = userName;
 		this.password = password;
 		this.firstName = firstName;
@@ -68,16 +68,16 @@ public class Manager {
 
 	@Override
 	public String toString() {
-		return "Manager [managerId=" + managerId + ", userName=" + userName + ", password=" + password + ", firstName="
+		return "Manager [managerId=" + managerid + ", userName=" + userName + ", password=" + password + ", firstName="
 				+ firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 
 	public int getManagerId() {
-		return managerId;
+		return managerid;
 	}
 
 	public void setManagerId(int managerId) {
-		this.managerId = managerId;
+		this.managerid = managerId;
 	}
 
 	public String getUserName() {
@@ -122,7 +122,7 @@ public class Manager {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, firstName, lastName, managerId, password, userName);
+		return Objects.hash(email, firstName, lastName, managerid, password, userName);
 	}
 
 	@Override
@@ -135,7 +135,7 @@ public class Manager {
 			return false;
 		Manager other = (Manager) obj;
 		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
-				&& Objects.equals(lastName, other.lastName) && managerId == other.managerId
+				&& Objects.equals(lastName, other.lastName) && managerid == other.managerid
 				&& Objects.equals(password, other.password) && Objects.equals(userName, other.userName);
 	}
 
