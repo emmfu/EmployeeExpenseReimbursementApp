@@ -2,6 +2,7 @@ package com.ers;
 
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -32,6 +33,10 @@ public class EmpServiceTest extends TestCase {
 		//Dummy DB =(id, username, password, firstname, lastname, email)
 		empl1 = new Employee(1, "WSmith", "Password", "Will", "Smith,", "WSmith@gmail.com" );
 		empl2 = new Employee(2, "CRock", "password", "Chris", "Rock,", "CRock@gmail.com" );
+		
+		dummyEmpDb =  new ArrayList<Employee>();
+		dummyEmpDb.add(empl1);
+		dummyEmpDb.add(empl2);
 	}
 	
 	//happy path scenario
@@ -48,7 +53,7 @@ public class EmpServiceTest extends TestCase {
 	public void testLoginFail_returnNull() throws Exception{
 		when(mockdao.selectAll()).thenReturn(dummyEmpDb);
 		
-		assertEquals(empl2, emplv.login("Ramen", "Sushi"));
+		assertNull(emplv.login("Ramen", "Sushi"));
 	}
 	
 	@Test
@@ -56,12 +61,22 @@ public class EmpServiceTest extends TestCase {
 		when(mockdao.selectAll()).thenReturn(dummyEmpDb);
 		
 		//no credentials entered
-		assertEquals(empl2, emplv.login("", ""));
+		assertNull(emplv.login("", ""));
+		
 	}
 	@Test
 	public void testRegister_returnsEmployee() {
 		//arrange
 		Employee empl3 = new Employee(3, "test", "test", "test", "test", "test");
+		
+		when(mockdao.insert(empl3)).thenReturn(1);
+		
+		assertEquals(1, emplv.register(empl3));
+		
+	}
+	@Test
+	public void testRegisterNullEmployee() {
+		Employee empl3 = new Employee(3, "", "", "", "", "");
 		
 		when(mockdao.insert(empl3)).thenReturn(1);
 		
