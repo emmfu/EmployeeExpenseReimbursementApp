@@ -1,8 +1,8 @@
-package com.revature.dao;
+package com.ers.dao;
 
 import java.util.List;
 
-import com.revature.models.Manager;
+import com.ers.models.Manager;
 
 public interface ManagerDAO {
 	

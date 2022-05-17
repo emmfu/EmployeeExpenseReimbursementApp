@@ -1,13 +1,13 @@
-package com.revature.services;
+package com.ers.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.apache.log4j.Logger;
 
-import com.revature.dao.ManagerDAO;
-import com.revature.dao.ManagerDAOImpl;
-import com.revature.models.Manager;
+import com.ers.dao.ManagerDAO;
+import com.ers.dao.ManagerDAOImpl;
+import com.ers.models.Manager;
 
 public class ManagerServiceImpl implements ManagerService {
 

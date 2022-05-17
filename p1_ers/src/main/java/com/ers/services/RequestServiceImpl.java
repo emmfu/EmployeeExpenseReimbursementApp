@@ -1,13 +1,13 @@
-package com.revature.services;
+package com.ers.services;
 
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.revature.dao.RequestDAO;
-import com.revature.dao.RequestDAOImpl;
-import com.revature.models.Employee;
-import com.revature.models.Request;
+import com.ers.dao.RequestDAO;
+import com.ers.dao.RequestDAOImpl;
+import com.ers.models.Employee;
+import com.ers.models.Request;
 
 public class RequestServiceImpl implements RequestService {
 	

@@ -1,4 +1,4 @@
-package com.revature.dao;
+package com.ers.dao;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.models.Employee;
-import com.revature.models.Request;
-import com.revature.util.HibernateUtil;
+import com.ers.models.Employee;
+import com.ers.models.Request;
+import com.ers.util.HibernateUtil;
 
 public class RequestDAOImpl implements RequestDAO {
 

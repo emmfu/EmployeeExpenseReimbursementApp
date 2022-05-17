@@ -1,4 +1,4 @@
-package com.revature.web;
+package com.ers.web;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,20 +17,20 @@ import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.dao.EmployeeDAOImpl;
-import com.revature.dao.ManagerDAOImpl;
-import com.revature.dao.RequestDAOImpl;
-import com.revature.models.Employee;
-import com.revature.models.Manager;
-import com.revature.models.Request;
-import com.revature.services.EmployeeService;
-import com.revature.services.EmployeeServiceImpl;
-import com.revature.services.JwtEmployeeService;
-import com.revature.services.JwtManagerService;
-import com.revature.services.ManagerService;
-import com.revature.services.ManagerServiceImpl;
-import com.revature.services.RequestService;
-import com.revature.services.RequestServiceImpl;
+import com.ers.dao.EmployeeDAOImpl;
+import com.ers.dao.ManagerDAOImpl;
+import com.ers.dao.RequestDAOImpl;
+import com.ers.models.Employee;
+import com.ers.models.Manager;
+import com.ers.models.Request;
+import com.ers.services.EmployeeService;
+import com.ers.services.EmployeeServiceImpl;
+import com.ers.services.JwtEmployeeService;
+import com.ers.services.JwtManagerService;
+import com.ers.services.ManagerService;
+import com.ers.services.ManagerServiceImpl;
+import com.ers.services.RequestService;
+import com.ers.services.RequestServiceImpl;
 
 public class RequestHelper {
 

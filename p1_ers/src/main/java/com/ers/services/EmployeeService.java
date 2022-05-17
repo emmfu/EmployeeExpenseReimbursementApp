@@ -1,8 +1,8 @@
-package com.revature.services;
+package com.ers.services;
 
 import java.util.List;
 
-import com.revature.models.Employee;
+import com.ers.models.Employee;
 
 public interface EmployeeService {
 

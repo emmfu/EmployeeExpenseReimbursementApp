@@ -1,8 +1,8 @@
-package com.revature.dao;
+package com.ers.dao;
 
 import java.util.List;
 
-import com.revature.models.Employee;
+import com.ers.models.Employee;
 
 public interface EmployeeDAO {
 

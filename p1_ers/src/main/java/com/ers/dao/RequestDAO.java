@@ -1,8 +1,8 @@
-package com.revature.dao;
+package com.ers.dao;
 
 import java.util.List;
 
-import com.revature.models.Request;
+import com.ers.models.Request;
 
 public interface RequestDAO {
 	public void insertwithoutCasting(Request request);

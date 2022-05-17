@@ -1,4 +1,4 @@
-package com.revature.services;
+package com.ers.services;
 
 
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.security.Key;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.models.Employee;
-import com.revature.models.EmployeeJwtDTO;
+import com.ers.models.Employee;
+import com.ers.models.EmployeeJwtDTO;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

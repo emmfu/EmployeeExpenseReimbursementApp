@@ -1,8 +1,8 @@
-package com.revature.services;
+package com.ers.services;
 
 import java.util.List;
 
-import com.revature.models.Request;
+import com.ers.models.Request;
 
 public interface RequestService {
 
