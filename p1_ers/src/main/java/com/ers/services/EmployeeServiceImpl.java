@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				.stream()
 				.filter(e -> (e.getUserName().equals(username) && e.getPassword().equals(password)))
 				.findFirst();
-		return employee.isPresent() ? employee.get() : null ;
+		return (employee.isPresent() ? employee.get() : null);
 	}
 
 	@Override

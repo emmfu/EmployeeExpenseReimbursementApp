@@ -266,6 +266,8 @@ public class RequestHelper {
 		}
 
 		String body = sb.toString();
+		log.info("Manager attempted to register with information: \n " + body);
+		
 		String[] sepByAmp = body.split("&");
 
 		List<String> values = new ArrayList<String>();
