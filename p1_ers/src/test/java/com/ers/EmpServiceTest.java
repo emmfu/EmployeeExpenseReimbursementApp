@@ -53,7 +53,7 @@ public class EmpServiceTest extends TestCase {
 	public void testLoginFail_returnNull() throws Exception{
 		when(mockdao.selectAll()).thenReturn(dummyEmpDb);
 		
-		assertEquals(empl2, emplv.login("Ramen", "Sushi"));
+		assertNull(emplv.login("Ramen", "Sushi"));
 	}
 	
 	@Test
@@ -61,7 +61,8 @@ public class EmpServiceTest extends TestCase {
 		when(mockdao.selectAll()).thenReturn(dummyEmpDb);
 		
 		//no credentials entered
-		assertEquals(empl2, emplv.login("", ""));
+		assertNull(emplv.login("", ""));
+		
 	}
 	@Test
 	public void testRegister_returnsEmployee() {

@@ -10,7 +10,6 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.ers.dao.ManagerDAOImpl;
-import com.ers.models.Employee;
 import com.ers.models.Manager;
 import com.ers.services.ManagerServiceImpl;
 import junit.framework.TestCase;
@@ -52,7 +51,7 @@ public class ManagerServiceTest extends TestCase {
 	public void testLoginFail_returnNull() throws Exception{
 		when(mockdao.selectAll()).thenReturn(dummyManagerDb);
 		
-		assertEquals(man1, manv.login("", ""));
+		assertNull(manv.login("", ""));
 	}
 	
 	@Test
@@ -60,7 +59,7 @@ public class ManagerServiceTest extends TestCase {
 		when(mockdao.selectAll()).thenReturn(dummyManagerDb);
 		
 		//no credentials entered
-		assertEquals(man2, manv.login("", ""));
+		assertNull(manv.login("", ""));
 	}
 	@Test
 	public void testRegister_returnsEmployee() {
