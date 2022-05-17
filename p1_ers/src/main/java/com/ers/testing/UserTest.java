@@ -1,13 +1,13 @@
 package com.ers.testing;
 import org.junit.Test;
 
-import com.ers.models.User;
+//import com.ers.models.User;
 
 import io.jsonwebtoken.lang.Assert;
 
 public class UserTest {
 	
-	User user = new User();
+//	User user = new User();
 	
 	//this is a positive test case
 	@Test
