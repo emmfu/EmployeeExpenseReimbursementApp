@@ -38,12 +38,12 @@ public class Request {
 	private String category;
 	
 	@OneToOne(targetEntity = Employee.class)
-	@JoinColumn(name = "employeeid", referencedColumnName = "employeeid")
-	private int employeeid;
+	@JoinColumn(name = "emid", referencedColumnName = "employeeid")
+	private int emid;
 	
 	@OneToOne(targetEntity = Manager.class)
-	@JoinColumn(name = "managerid", referencedColumnName = "managerid")
-	private int managerid;
+	@JoinColumn(name = "manid", referencedColumnName = "managerid")
+	private int manid;
 	// private picture;
 
 	public Request() {
@@ -58,8 +58,8 @@ public class Request {
 		this.reimbursmentStatus = reimbursmentStatus;
 		this.description = description;
 		this.category = category;
-		this.employeeid = employeeId;
-		this.managerid = managerId;
+		this.emid = employeeId;
+		this.manid = managerId;
 	}
 	public Request(int requestId, double amount, LocalDate submissionDate, String reimbursmentStatus,
 			String description, String category, int employeeId, int managerId) {
@@ -70,14 +70,14 @@ public class Request {
 		this.reimbursmentStatus = reimbursmentStatus;
 		this.description = description;
 		this.category = category;
-		this.employeeid = employeeId;
-		this.managerid = managerId;
+		this.emid = employeeId;
+		this.manid = managerId;
 	}
 	@Override
 	public String toString() {
 		return "Request [requestId=" + requestId + ", amount=" + amount + ", submissionDate=" + submissionDate
 				+ ", reimbursmentStatus=" + reimbursmentStatus + ", description=" + description + ", category="
-				+ category + ", employeeId=" + employeeid + ", managerId=" + managerid + "]";
+				+ category + ", employeeId=" + emid + ", managerId=" + manid + "]";
 	}
 	public int getRequestId() {
 		return requestId;
@@ -116,20 +116,20 @@ public class Request {
 		this.category = category;
 	}
 	public int getEmployeeId() {
-		return employeeid;
+		return emid;
 	}
 	public void setEmployeeId(int employeeId) {
-		this.employeeid = employeeId;
+		this.emid = employeeId;
 	}
 	public int getManagerId() {
-		return managerid;
+		return manid;
 	}
 	public void setManagerId(int managerId) {
-		this.managerid = managerId;
+		this.manid = managerId;
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(amount, category, description, employeeid, managerid, reimbursmentStatus, requestId,
+		return Objects.hash(amount, category, description, emid, manid, reimbursmentStatus, requestId,
 				submissionDate);
 	}
 	@Override
@@ -143,7 +143,7 @@ public class Request {
 		Request other = (Request) obj;
 		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
 				&& Objects.equals(category, other.category) && Objects.equals(description, other.description)
-				&& employeeid == other.employeeid && managerid == other.managerid
+				&& emid == other.emid && manid == other.manid
 				&& Objects.equals(reimbursmentStatus, other.reimbursmentStatus) && requestId == other.requestId
 				&& Objects.equals(submissionDate, other.submissionDate);
 	}
