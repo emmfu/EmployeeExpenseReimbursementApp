@@ -54,7 +54,7 @@ public class RequestDAOImpl implements RequestDAO {
 		log.info("Searching Request by Empl. Id: " + employeeId);
 		Session ses = HibernateUtil.getSession();
 		List<Request> requestListByEmpId = ses
-				.createQuery("from Request where employeeId = " + employeeId, Request.class).list();
+				.createQuery("from Request where employeeid = " + employeeId, Request.class).list();
 		log.info("Retrieved Request list by Empl. Id: " + employeeId);
 		return requestListByEmpId;
 		
@@ -66,7 +66,7 @@ public class RequestDAOImpl implements RequestDAO {
 		log.info("Searching Request by Manager Id: " + managerId);
 		Session ses = HibernateUtil.getSession();
 		List<Request> requestListByEmpId = ses
-				.createQuery("from Request where employeeId = " + managerId, Request.class).list();
+				.createQuery("from Request where employeeid = " + managerId, Request.class).list();
 		log.info("Retrieved Request list by Manager Id: " + managerId);
 		return requestListByEmpId;
 	}
@@ -111,7 +111,7 @@ public class RequestDAOImpl implements RequestDAO {
 		log.info("Searching Request by resloved manager: " + managerId);
 		Session ses = HibernateUtil.getSession();
 		List<Request> requestByResolvedManager = ses
-				.createQuery("FROM Request WHERE reimbursementStatus NOT LIKE 'Pending' and managerId = " + managerId, Request.class)
+				.createQuery("FROM Request WHERE reimbursementStatus NOT LIKE 'Pending' and managerid = " + managerId, Request.class)
 				.list();
 		log.info("Retreived Request list by resolved manager: " + managerId);
 		return requestByResolvedManager;
@@ -133,9 +133,9 @@ public class RequestDAOImpl implements RequestDAO {
 		log.info("Searching Requests by employeeId and status: " + employeeId + " and " + status + ".");
 		Session ses = HibernateUtil.getSession();
 		List<Request> requestByEmployeeIdStatus = ses
-				.createQuery("FROM Request WHERE employeeId = " + employeeId + " and reimbursementStatus = " + status, Request.class)
+				.createQuery("FROM Request WHERE employeeid = " + employeeId + " and reimbursementStatus = " + status, Request.class)
 				.list();
-		log.info("Retrieved Request list by imployeeId and status: " + employeeId + " and " + status);
+		log.info("Retrieved Request list by employeeid and status: " + employeeId + " and " + status);
 		return requestByEmployeeIdStatus;
 	}
 

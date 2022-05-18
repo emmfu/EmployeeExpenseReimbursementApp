@@ -19,6 +19,7 @@
 	<url-pattern>/employees/employee</url-pattern>
 	<url-pattern>/employees/employee/myrequests</url-pattern>
 	<url-pattern>/employees/employee/myrequests/status</url-pattern>
+	<url-pattern>/managers/manager</url-pattern>
 	<url-pattern>/managers/manager/requests</url-pattern>
 	<url-pattern>/managers/manager/requestbyemployee</url-pattern>
 	<url-pattern>/managers/manager/requestbyresolvedmanager</url-pattern>

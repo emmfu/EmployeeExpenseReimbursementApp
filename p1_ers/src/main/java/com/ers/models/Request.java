@@ -22,28 +22,28 @@ public class Request {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int requestId;
 	
-	@Column(name="amount", unique=true, nullable=false)
+	@Column(name="amount",  nullable=false)
 	private double amount;
 	
-	@Column(name="submission_date", unique=true, nullable=false)
+	@Column(name="submission_date",  nullable=false)
 	private LocalDate submissionDate;
 	
-	@Column(name="reimbursement_status", unique=true, nullable=false)
+	@Column(name="reimbursement_status",  nullable=false)
 	private String reimbursmentStatus;
 	
-	@Column(name="description", unique=true, nullable=false)
+	@Column(name="description", nullable=false)
 	private String description;
 	
-	@Column(name="category", unique=true, nullable=false)
+	@Column(name="category",  nullable=false)
 	private String category;
 	
 	@OneToOne(targetEntity = Employee.class)
 	@JoinColumn(name = "employeeid", referencedColumnName = "employeeid")
-	private int employeeId;
+	private int employeeid;
 	
 	@OneToOne(targetEntity = Manager.class)
 	@JoinColumn(name = "managerid", referencedColumnName = "managerid")
-	private int managerId;
+	private int managerid;
 	// private picture;
 
 	public Request() {
@@ -58,8 +58,8 @@ public class Request {
 		this.reimbursmentStatus = reimbursmentStatus;
 		this.description = description;
 		this.category = category;
-		this.employeeId = employeeId;
-		this.managerId = managerId;
+		this.employeeid = employeeId;
+		this.managerid = managerId;
 	}
 	public Request(int requestId, double amount, LocalDate submissionDate, String reimbursmentStatus,
 			String description, String category, int employeeId, int managerId) {
@@ -70,14 +70,14 @@ public class Request {
 		this.reimbursmentStatus = reimbursmentStatus;
 		this.description = description;
 		this.category = category;
-		this.employeeId = employeeId;
-		this.managerId = managerId;
+		this.employeeid = employeeId;
+		this.managerid = managerId;
 	}
 	@Override
 	public String toString() {
 		return "Request [requestId=" + requestId + ", amount=" + amount + ", submissionDate=" + submissionDate
 				+ ", reimbursmentStatus=" + reimbursmentStatus + ", description=" + description + ", category="
-				+ category + ", employeeId=" + employeeId + ", managerId=" + managerId + "]";
+				+ category + ", employeeId=" + employeeid + ", managerId=" + managerid + "]";
 	}
 	public int getRequestId() {
 		return requestId;
@@ -116,20 +116,20 @@ public class Request {
 		this.category = category;
 	}
 	public int getEmployeeId() {
-		return employeeId;
+		return employeeid;
 	}
 	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+		this.employeeid = employeeId;
 	}
 	public int getManagerId() {
-		return managerId;
+		return managerid;
 	}
 	public void setManagerId(int managerId) {
-		this.managerId = managerId;
+		this.managerid = managerId;
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(amount, category, description, employeeId, managerId, reimbursmentStatus, requestId,
+		return Objects.hash(amount, category, description, employeeid, managerid, reimbursmentStatus, requestId,
 				submissionDate);
 	}
 	@Override
@@ -143,7 +143,7 @@ public class Request {
 		Request other = (Request) obj;
 		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
 				&& Objects.equals(category, other.category) && Objects.equals(description, other.description)
-				&& employeeId == other.employeeId && managerId == other.managerId
+				&& employeeid == other.employeeid && managerid == other.managerid
 				&& Objects.equals(reimbursmentStatus, other.reimbursmentStatus) && requestId == other.requestId
 				&& Objects.equals(submissionDate, other.submissionDate);
 	}

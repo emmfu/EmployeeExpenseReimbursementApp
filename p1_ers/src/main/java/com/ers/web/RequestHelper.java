@@ -546,7 +546,7 @@ public class RequestHelper {
 		log.info("Attempted request search by employee id:\n " + body);
 
 		res.setContentType("application/json");
-		int employeeId = Integer.parseInt(values.get(5));
+		int employeeId = Integer.parseInt(values.get(0));
 		List<Request> requestsByEmployeeId = rserv.findRequestByEmployeeId(employeeId);
 		
 		String json = om.writeValueAsString(requestsByEmployeeId);
