@@ -144,7 +144,7 @@ public class RequestHelper {
 			out.println(om.writeValueAsString(m));
 
 			// log it
-			System.out.println("The employee " + username + " has logged in.");
+			System.out.println("The Manager " + username + " has logged in.");
 		} else {
 			res.setStatus(204);
 		}
@@ -298,7 +298,7 @@ public class RequestHelper {
 
 			res.setContentType("application/json");
 			res.setStatus(200);
-			log.info("User has successfully been created.");
+			log.info("Manager has successfully been created.");
 		} else {
 			res.setContentType("application/json");
 			res.setStatus(204);
